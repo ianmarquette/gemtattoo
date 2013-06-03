@@ -58,6 +58,9 @@ $alert-blue:        #d5edf8;
 
 $black:             #000;
 $white:             #fff;
+$grey:				#d8d8d8;
+$blue:				#6bceea;
+$beige:				#fafafa;
 
 $bones-pink:        #f01d4f;
 $bones-blue:        #1990db;
@@ -76,8 +79,8 @@ http://sachagreif.com/sass-color-variables/
 TYPOGRAPHY
 *********************/
 
-$sans-serif:        "p22-underground-pc", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "minion-pro", "Georgia", Cambria, Times New Roman, Times, serif;
+$sans-serif:        "p22-underground-pc", Gill Sans, Gill Sans MT, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "minion-pro", Cambria, Times New Roman, Times, serif; 
 
 
 /* 	To embed your own fonts, use this syntax
@@ -248,3 +251,70 @@ BUTTONS
 		@include css-gradient( darken($bones-blue, 5%), $bones-blue );
 	}
 }
+
+/*********************
+GRID
+*********************/
+
+$onecol		: 30%;		// 1000px/300px   
+$twocol		: 62.5%;    // 1000px/625px     
+$threecol	: 95%;      // 1000px/950px 
+
+// layout & column defaults
+.onecol, .twocol, .threecol {
+  position: relative;
+  float: left;
+  margin-left: 4%;		// 1000px/25px
+}
+
+.first {
+  margin-left: 0;
+}
+
+.last {
+  float: right;
+}  
+
+
+/*********************
+SPRITES
+*********************/
+
+$sprite: logo, logo_small, page_title_spiral, tagline_spiral, info_spiral, page_divider, facebook_icon, twitter_icon, rss_icon, email_icon, left_grey_arrow, right_grey_arrow, left_beige_arrow, right_beige_arrow;
+$spritegrid:200;
+
+@mixin sprite-bg($crop, $x:0, $y:$x, $hover:true) { 
+    $i:0; 
+    @each $part in $sprite { 
+        @if ($part == $crop) { 
+            $i:index($sprite, $part);
+        } 
+    }
+    @if $i == 0 { 
+        @warn "sprite-bg can't find '#{$crop}' in $sprite"; 
+    } 
+    background-image:url("../images/two-apples-twelve-acres-sprite.png");
+    background-position-x: ($x * 1px); 
+    background-position-y: ((($i - 1) * ($spritegrid * -1px)) + $y); 
+    background-repeat:no-repeat; 
+    @if $hover { 
+        &:hover, 
+        &:focus { 
+            background-position-x: (($spritegrid * -1px) + ($x * 1px));
+        } 
+    } 
+    .svg & { background-image:url("../images/two-apples-twelve-acres-sprite.svg"); 
+    } 
+}
+
+/*********************
+CENTRE ALIGN BOX ELEMENTS
+*********************/
+
+@mixin auto-margin {
+	margin: 0 auto;
+}
+
+
+
+

@@ -181,7 +181,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em; }
 
 /*
@@ -299,7 +299,7 @@ form {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -544,7 +544,7 @@ use the best ampersand
 http://simplebits.com/notebook/2008/08/14/ampersands-2/
 */
 span.amp {
-  font-family: Baskerville, "Goudy Old Style", Palatino, "Book Antiqua", serif !important;
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
   font-style: italic; }
 
 .text-left {
@@ -602,7 +602,7 @@ probably best not to use it. I mean, were you going to anyway? */
 BUTTONS
 *********************/
 .button, .button:visited {
-  font-family: "p22-underground-pc", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "p22-underground-pc", Gill Sans, Gill Sans MT, "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: 1px solid #be0d37;
   border-top-color: #db0f3f;
   border-left-color: #db0f3f;
@@ -668,6 +668,26 @@ BUTTONS
     background-image: -o-linear-gradient(top, #1681c4, #1990db);
     background-image: linear-gradient(to bottom, #1681c4, #1990db); }
 
+/*********************
+GRID
+*********************/
+.onecol, .twocol, .threecol {
+  position: relative;
+  float: left;
+  margin-left: 4%; }
+
+.first {
+  margin-left: 0; }
+
+.last {
+  float: right; }
+
+/*********************
+SPRITES
+*********************/
+/*********************
+CENTRE ALIGN BOX ELEMENTS
+*********************/
 /*
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -690,7 +710,7 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 body {
-  font-family: "minion-pro", "Georgia", Cambria, Times New Roman, Times, serif;
+  font-family: "minion-pro", Cambria, Times New Roman, Times, serif;
   font-size: 100%;
   line-height: 1.5;
   color: #565656; }
@@ -763,7 +783,7 @@ a, a:visited {
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: "p22-underground-pc", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "p22-underground-pc", Gill Sans, Gill Sans MT, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizelegibility;
   font-weight: 500;
   /*
@@ -810,7 +830,7 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 .nav {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   border-bottom: 0;
   /* end .menu li */
   /* highlight current page */
@@ -828,7 +848,7 @@ and more scalable.
       text-decoration: none;
       padding: 10px 10px;
       background-color: #eee;
-      border-bottom: 1px solid #cccccc;
+      border-bottom: 1px solid #ccc;
       /*
       remember this is for mobile ONLY, so there's no need
       to even declare hover styles here, you can do it in
@@ -1339,7 +1359,7 @@ you can add resource intensive styles.
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;
-        border: 1px solid #cccccc;
+        border: 1px solid #ccc;
         border-top: 0;
         position: absolute;
         display: none;
@@ -1358,7 +1378,7 @@ you can add resource intensive styles.
             border-right: 0;
             display: block;
             width: 180px;
-            border-bottom: 1px solid #cccccc; }
+            border-bottom: 1px solid #ccc; }
           .nav li ul.sub-menu li:last-child a,
           .nav li ul.children li:last-child a {
             border-bottom: 0; }
@@ -1374,7 +1394,7 @@ you can add resource intensive styles.
     margin-top: 2.2em; }
 
   .widgettitle {
-    border-bottom: 2px solid #444444;
+    border-bottom: 2px solid #444;
     margin-bottom: 0.75em; }
 
   .widget {
@@ -1523,7 +1543,7 @@ be set to display none.
     -ms-filter: none !important; }
 
   a, a:visited {
-    color: #444444 !important;
+    color: #444 !important;
     text-decoration: underline; }
     a:after, a:visited:after {
       content: " (" attr(href) ")"; }
@@ -1536,7 +1556,7 @@ be set to display none.
     content: ""; }
 
   pre, blockquote {
-    border: 1px solid #999999;
+    border: 1px solid #999;
     page-break-inside: avoid; }
 
   thead {
