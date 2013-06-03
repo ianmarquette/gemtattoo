@@ -229,7 +229,8 @@ GRID
   margin-left: 0; }
 
 .last {
-  float: right; }
+  float: right;
+  margin-left: 0px; }
 
 /*********************
 SPRITES
@@ -322,10 +323,12 @@ values are commented out on each line.
 Site Name: 
 Author: 
 
-Stylesheet: 481px and Up Stylesheet
+Stylesheet: 30em (481px / 16px) and Up Stylesheet
+
+This is named beta as _base.scss counts as the alpha media query
 
 This stylesheet is loaded for larger devices. It's set to 
-481px because at 480px it would load on a landscaped iPhone.
+30em because at 29em it would load on a landscaped iPhone.
 This isn't ideal because then you would be loading all those
 extra styles on that same mobile connection. 
 
@@ -388,7 +391,7 @@ do they need tweaking?
 Site Name:
 Author:
 
-Stylesheet: Tablet & Small Desktop Stylesheet
+Stylesheet: 48em (768px / 16px) and Up - Tablet & Small Desktop Stylesheet
 
 Here's where you can start getting into the good stuff.
 This size will work on iPads, other tablets, and desktops.
@@ -515,7 +518,7 @@ mobile. Make sure to double check these!
 Site Name: 
 Author: 
 
-Stylesheet: Desktop Stylsheet
+Stylesheet: 64em (1030px / 16px) and Up Desktop Stylsheet
 
 This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 

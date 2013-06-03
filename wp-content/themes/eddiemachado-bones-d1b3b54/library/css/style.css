@@ -680,7 +680,8 @@ GRID
   margin-left: 0; }
 
 .last {
-  float: right; }
+  float: right;
+  margin-left: 0px; }
 
 /*********************
 SPRITES
@@ -1151,16 +1152,21 @@ LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
 larger than an iPhone but smaller than a tablet. Let's call them
 tweeners.
+
+30em (481px / 16px)
+
 */
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 30em) {
   /******************************************************************
   Site Name: 
   Author: 
   
-  Stylesheet: 481px and Up Stylesheet
+  Stylesheet: 30em (481px / 16px) and Up Stylesheet
+  
+  This is named beta as _base.scss counts as the alpha media query
   
   This stylesheet is loaded for larger devices. It's set to 
-  481px because at 480px it would load on a landscaped iPhone.
+  30em because at 29em it would load on a landscaped iPhone.
   This isn't ideal because then you would be loading all those
   extra styles on that same mobile connection. 
   
@@ -1224,94 +1230,16 @@ TABLET & SMALLER LAPTOPS
 This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
+
+48em (768px / 16px)
+
 */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 48em) {
   /******************************************************************
   Site Name:
   Author:
   
-  Stylesheet: Grid Stylesheet
-  
-  I've seperated the grid so you can swap it out easily. It's
-  called at the top the style.scss stylesheet.
-  
-  There are a ton of grid solutions out there. You should definitely
-  experiment with your own. Here are some recommendations:
-  
-  http://gridsetapp.com - Love this site. Responsive Grids made easy.
-  http://susy.oddbird.net/ - Grids using Compass. Very elegant.
-  http://gridpak.com/ - Create your own responsive grid.
-  
-  The grid below is a combination of the 1140 grid and Twitter Boostrap. 
-  I liked 1140 but Boostrap's grid was way more detailed so I merged them 
-  together, let's see how this works out. If you want to use 1140, the original 
-  values are commented out on each line.
-  
-  ******************************************************************/
-  .onecol {
-    width: 5.801104972%; }
-
-  /* 4.85%;  } /* grid_1  */
-  .twocol {
-    width: 14.364640883%; }
-
-  /* 13.45%; } /* grid_2  */
-  .threecol {
-    width: 22.928176794%; }
-
-  /* 22.05%; } /* grid_3  */
-  .fourcol {
-    width: 31.491712705%; }
-
-  /* 30.75%; } /* grid_4  */
-  .fivecol {
-    width: 40.055248616%; }
-
-  /* 39.45%; } /* grid_5  */
-  .sixcol {
-    width: 48.618784527%; }
-
-  /* 48%;    } /* grid_6  */
-  .sevencol {
-    width: 57.182320438000005%; }
-
-  /* 56.75%; } /* grid_7  */
-  .eightcol {
-    width: 65.74585634900001%; }
-
-  /* 65.4%;  } /* grid_8  */
-  .ninecol {
-    width: 74.30939226%; }
-
-  /* 74.05%; } /* grid_9  */
-  .tencol {
-    width: 82.87292817100001%; }
-
-  /* 82.7%;  } /* grid_10 */
-  .elevencol {
-    width: 91.436464082%; }
-
-  /* 91.35%; } /* grid_11 */
-  .twelvecol {
-    width: 99.999999993%; }
-
-  /* 100%;   } /* grid_12 */
-  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
-    position: relative;
-    float: left;
-    margin-left: 2.762430939%; }
-
-  .first {
-    margin-left: 0; }
-
-  .last {
-    float: right; }
-
-  /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: Tablet & Small Desktop Stylesheet
+  Stylesheet: 48em (768px / 16px) and Up - Tablet & Small Desktop Stylesheet
   
   Here's where you can start getting into the good stuff.
   This size will work on iPads, other tablets, and desktops.
@@ -1439,13 +1367,16 @@ DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
 in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
+
+64em (1030px / 16px)
+
 */
-@media only screen and (min-width: 1030px) {
+@media only screen and (min-width: 64em) {
   /******************************************************************
   Site Name: 
   Author: 
   
-  Stylesheet: Desktop Stylsheet
+  Stylesheet: 64em (1030px / 16px) and Up Desktop Stylsheet
   
   This is the desktop size. It's larger than an iPad so it will only
   be seen on the Desktop. 
@@ -1454,13 +1385,16 @@ you can add resource intensive styles.
 /*
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
+
+77em (1240x / 16px)
+
 */
-@media only screen and (min-width: 1240px) {
+@media only screen and (min-width: 77em) {
   /******************************************************************
   Site Name: 
   Author: 
   
-  Stylesheet: Super Large Monitor Stylesheet
+  Stylesheet: 77em (1240px / 16px) and Up Super Large Monitor Stylesheet
   
   You can add some advanced styles here if you like. This kicks in
   on larger screens.
