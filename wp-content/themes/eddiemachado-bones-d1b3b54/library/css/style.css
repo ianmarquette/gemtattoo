@@ -603,9 +603,9 @@ BUTTONS
 *********************/
 .button, .button:visited {
   font-family: "p22-underground-pc", Gill Sans, Gill Sans MT, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: 1px solid #be0d37;
-  border-top-color: #db0f3f;
-  border-left-color: #db0f3f;
+  border: 1px solid black;
+  border-top-color: black;
+  border-left-color: black;
   padding: 4px 12px;
   color: white;
   display: inline-block;
@@ -617,30 +617,30 @@ BUTTONS
   margin-bottom: 20px;
   line-height: 21px;
   border-radius: 4px;
-  background-color: #e40f42;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f01d4f), to(#e40f42));
-  background-image: -webkit-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -moz-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: -o-linear-gradient(top, #f01d4f, #e40f42);
-  background-image: linear-gradient(to bottom, #f01d4f, #e40f42); }
+  background-color: black;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(black));
+  background-image: -webkit-linear-gradient(top, black, black);
+  background-image: -moz-linear-gradient(top, black, black);
+  background-image: -o-linear-gradient(top, black, black);
+  background-image: linear-gradient(to bottom, black, black); }
   .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
     color: white;
-    border: 1px solid #be0d37;
-    border-top-color: #9d0a2d;
-    border-left-color: #9d0a2d;
-    background-color: #cc0e3b;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#cc0e3b));
-    background-image: -webkit-linear-gradient(top, #e40f42, #cc0e3b);
-    background-image: -moz-linear-gradient(top, #e40f42, #cc0e3b);
-    background-image: -o-linear-gradient(top, #e40f42, #cc0e3b);
-    background-image: linear-gradient(to bottom, #e40f42, #cc0e3b); }
+    border: 1px solid black;
+    border-top-color: black;
+    border-left-color: black;
+    background-color: black;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(black));
+    background-image: -webkit-linear-gradient(top, black, black);
+    background-image: -moz-linear-gradient(top, black, black);
+    background-image: -o-linear-gradient(top, black, black);
+    background-image: linear-gradient(to bottom, black, black); }
   .button:active, .button:visited:active {
-    background-color: #f01d4f;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#e40f42), to(#f01d4f));
-    background-image: -webkit-linear-gradient(top, #e40f42, #f01d4f);
-    background-image: -moz-linear-gradient(top, #e40f42, #f01d4f);
-    background-image: -o-linear-gradient(top, #e40f42, #f01d4f);
-    background-image: linear-gradient(to bottom, #e40f42, #f01d4f); }
+    background-color: black;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(black));
+    background-image: -webkit-linear-gradient(top, black, black);
+    background-image: -moz-linear-gradient(top, black, black);
+    background-image: -o-linear-gradient(top, black, black);
+    background-image: linear-gradient(to bottom, black, black); }
 
 .blue-button, .blue-button:visited {
   border-color: #1472ad;
@@ -711,10 +711,11 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 body {
+  background-color: #fafafa;
+  color: black;
   font-family: "minion-pro", Cambria, Times New Roman, Times, serif;
   font-size: 100%;
-  line-height: 1.5;
-  color: #565656; }
+  line-height: 1.6; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -759,19 +760,19 @@ style a page via class
 LAYOUT & GRID STYLES
 *********************/
 .wrap {
-  width: 96%;
+  width: 100%;
   margin: 0 auto; }
 
 /*********************
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #f01d4f;
+  color: black;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #d10e3c; }
+    color: black; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
@@ -796,8 +797,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     text-decoration: none; }
 
 h1, .h1 {
-  font-size: 2.5em;
-  line-height: 1.333em; }
+  display: inline-block;
+  font-size: 2.2em; }
 
 h2, .h2 {
   font-size: 1.75em;
@@ -820,6 +821,28 @@ h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
+.masthead {
+  margin: 0 auto;
+  display: block;
+  max-width: 1000px;
+  text-align: center; }
+  .masthead h1 {
+    display: none; }
+
+.logo {
+  background-image: url("../images/gem-tattoo-sprite.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 1.6em 1em 0;
+  height: 8em;
+  text-indent: -99999px;
+  width: 8em;
+  vertical-align: top; }
+  .svg .logo {
+    background-image: url("../images/gem-tattoo-sprite.svg"); }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -831,12 +854,16 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 .nav {
-  border: 1px solid #ccc;
-  border-bottom: 0;
+  background: white;
+  margin: 0;
+  text-align: center;
+  width: 100%;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
   .nav li {
+    display: inline-block;
+    margin: 0 1.5em;
     /*
     so you really have to rethink your dropdowns for mobile.
     you don't want to have it expand too much because the
@@ -846,10 +873,10 @@ and more scalable.
     */ }
     .nav li a {
       display: block;
+      margin: 1.55em 0;
+      padding: 0;
       text-decoration: none;
-      padding: 10px 10px;
-      background-color: #eee;
-      border-bottom: 1px solid #ccc;
+      text-transform: uppercase;
       /*
       remember this is for mobile ONLY, so there's no need
       to even declare hover styles here, you can do it in
@@ -1186,6 +1213,7 @@ tweeners.
       /* highlight current page */
       /* end current highlighters */ }
       .menu ul li {
+        margin: 0 3em;
         /*
         plan your menus and drop-downs wisely.
         */ }
@@ -1254,23 +1282,41 @@ you can add resource intensive styles.
   /*********************
   LAYOUT & GRID STYLES
   *********************/
-  .wrap {
-    max-width: 1140px; }
-
   /*********************
   HEADER STYLES
   *********************/
+  .masthead h1 {
+    display: inline-block;
+    margin-top: 1.85em;
+    width: 7em; }
+    .masthead h1:first-child {
+      text-align: right; }
+    .masthead h1:last-child {
+      text-align: left; }
+
+  .logo {
+    background-image: url("../images/gem-tattoo-sprite.png");
+    background-position-x: 0px;
+    background-position-y: 0px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 1.6em 1em 0;
+    height: 8em;
+    text-indent: -99999px;
+    width: 8em;
+    vertical-align: top; }
+    .svg .logo {
+      background-image: url("../images/gem-tattoo-sprite.svg"); }
+
   /*********************
   NAVIGATION STYLES
   *********************/
   .nav {
-    background: #eee;
     border: 0;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */ }
     .nav li {
-      float: left;
       position: relative;
       /*
       plan your menus and drop-downs wisely.
@@ -1283,7 +1329,8 @@ you can add resource intensive styles.
         has the possibility of being a mobile device.
         */ }
         .nav li a:hover, .nav li a:focus {
-          background-color: #dedede; }
+          border-bottom: 2px solid #6bceea;
+          margin-bottom: 0; }
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;

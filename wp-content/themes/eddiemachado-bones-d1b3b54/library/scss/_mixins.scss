@@ -65,7 +65,7 @@ $beige:				#fafafa;
 $bones-pink:        #f01d4f;
 $bones-blue:        #1990db;
 
-$link-color:        $bones-pink;
+$link-color:        $black;
 $link-hover:        darken($link-color, 9%);
 
 /*
@@ -281,7 +281,7 @@ $threecol	: 95%;      // 1000px/950px
 SPRITES
 *********************/
 
-$sprite: logo, logo_small, page_title_spiral, tagline_spiral, info_spiral, page_divider, facebook_icon, twitter_icon, rss_icon, email_icon, left_grey_arrow, right_grey_arrow, left_beige_arrow, right_beige_arrow;
+$sprite: logo, facebook_icon, tubmlr_icon;
 $spritegrid:200;
 
 @mixin sprite-bg($crop, $x:0, $y:$x, $hover:true) { 
@@ -294,7 +294,7 @@ $spritegrid:200;
     @if $i == 0 { 
         @warn "sprite-bg can't find '#{$crop}' in $sprite"; 
     } 
-    background-image:url("../images/two-apples-twelve-acres-sprite.png");
+    background-image:url("../images/gem-tattoo-sprite.png");
     background-position-x: ($x * 1px); 
     background-position-y: ((($i - 1) * ($spritegrid * -1px)) + $y); 
     background-repeat:no-repeat; 
@@ -304,7 +304,7 @@ $spritegrid:200;
             background-position-x: (($spritegrid * -1px) + ($x * 1px));
         } 
     } 
-    .svg & { background-image:url("../images/two-apples-twelve-acres-sprite.svg"); 
+    .svg & { background-image:url("../images/gem-tattoo-sprite.svg"); 
     } 
 }
 

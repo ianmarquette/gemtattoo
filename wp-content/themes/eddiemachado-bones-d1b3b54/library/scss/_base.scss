@@ -16,10 +16,11 @@ GENERAL STYLES
 *********************/
 
 body {
+	background-color: $beige;
+	color: $black;
 	font-family: $serif;
 	font-size: 100%;
-	line-height: 1.5;
-	color: #565656;
+	line-height: 1.6;
 }
 
 /********************
@@ -68,7 +69,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -120,8 +121,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 2.5em;
-	line-height: 1.333em;
+	display: inline-block;
+	font-size: 2.2em;
+
 }
 
 h2, .h2 {
@@ -150,9 +152,27 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
-.header {}
+.masthead {
+	@include auto-margin;
+	display: block;
+	max-width: 1000px;
+	text-align: center;
 
-	#logo {}
+	h1{
+		display: none;
+
+	}
+}
+
+	.logo {
+		@include sprite-bg('logo', 0, 0, false);
+		display: inline-block;
+		margin: 1.6em 1em 0;
+		height: 8em;
+		text-indent: -99999px;
+		width: 8em;
+		vertical-align: top;
+	}
 
 /*********************
 NAVIGATION STYLES
@@ -167,17 +187,21 @@ and more scalable.
 */
 
 .nav {
-	border: 1px solid #ccc;
-	border-bottom: 0;
+	background: $white;
+	margin: 0;
+	text-align: center;
+	width: 100%;
 
 	li {
+		display: inline-block;
+		margin: 0 1.5em;
 
 		a {
 			display: block;
+			margin: 1.55em 0;
+			padding: 0;
 			text-decoration: none;
-			padding: 10px 10px;
-			background-color: #eee;
-			border-bottom: 1px solid #ccc;
+			text-transform: uppercase;
 
 			/*
 			remember this is for mobile ONLY, so there's no need

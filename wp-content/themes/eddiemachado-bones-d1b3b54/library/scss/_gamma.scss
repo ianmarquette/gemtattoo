@@ -24,27 +24,49 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	max-width: 1140px;
+	//max-width: 1140px;
 }
 
 /*********************
 HEADER STYLES
 *********************/
 
-.header {}
+.masthead {
 
-	#logo {}
+	h1{
+		display: inline-block;;
+		margin-top: 1.85em;
+		width: 7em;
+
+		&:first-child {
+			text-align: right;
+		}
+
+		&:last-child {
+			text-align: left;
+		}
+	}
+}
+
+
+.logo {
+	@include sprite-bg('logo', 0, 0, false);
+	display: inline-block;
+	margin: 1.6em 1em 0;
+	height: 8em;
+	text-indent: -99999px;
+	width: 8em;
+	vertical-align: top;
+	}
 
 /*********************
 NAVIGATION STYLES
 *********************/
 
 .nav {
-	background: #eee;
 	border: 0;
 
 	li {
-		float: left;
 		position: relative;
 
 		a {
@@ -55,7 +77,8 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				background-color: #dedede;
+				border-bottom: 2px solid $blue;
+				margin-bottom: 0;
 
 			}
 		}

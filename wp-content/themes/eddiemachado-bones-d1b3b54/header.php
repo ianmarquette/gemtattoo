@@ -42,6 +42,65 @@
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<!-- end Typekit -->
 
+		<link href="<?php echo get_template_directory_uri(); ?>/library/js/hugrid.css" type="text/css" rel="stylesheet" />
+<script src="<?php echo get_template_directory_uri(); ?>/library/js/jquery-1.6.2.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/library/js/hugrid.js"></script>
+<script type="text/javascript">
+    definegrid = function() {
+        var browserWidth = $(window).width(); 
+        if (browserWidth >= 1001) 
+        {
+            pageUnits = 'px';
+            colUnits = 'px';
+            pagewidth = 1000;
+            columns = 3;
+            columnwidth = 316;
+            gutterwidth = 26;
+            pagetopmargin = 0;
+            rowheight = 25;
+            gridonload = 'off';
+            makehugrid();
+        } 
+        if (browserWidth <= 1000) 
+        {
+            pageUnits = '%';
+            colUnits = '%';
+            pagewidth = 94;
+            columns = 2;
+            columnwidth = 48;
+            gutterwidth = 4;
+            pagetopmargin = 0;
+            rowheight = 25;
+            gridonload = 'off';
+            makehugrid();
+        }
+        if (browserWidth <= 320) 
+        {
+            pageUnits = 'px';
+            colUnits = 'px';
+            pagewidth = 280;
+            columns = 2;
+            columnwidth = 130;
+            gutterwidth = 20;
+            pagetopmargin = 0;
+            rowheight = 25;
+            gridonload = 'on';
+            makehugrid();
+        }
+    }
+    $(document).ready(function() {
+        definegrid();
+        setgridonload();
+    });    
+
+    $(window).resize(function() {
+        definegrid();
+        setgridonresize();
+    });
+</script>
+
+ <!-- <link rel="stylesheet" href="http://basehold.it/25/ff0000"> -->
+
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -52,16 +111,17 @@
 
 				<div id="inner-header" class="wrap clearfix">
 
-					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
-
-					<!-- if you'd like to use the site description you can un-comment it below -->
-					<?php // bloginfo('description'); ?>
-
-
 					<nav role="navigation">
 						<?php bones_main_nav(); ?>
 					</nav>
+
+					<section class="masthead">
+						<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
+						<h1>Gem Tattoo</h1>
+						<p class="logo"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+						<h1>Lydia K</h1>
+					</section> <!-- end .masthead __>
+
 
 				</div> <!-- end #inner-header -->
 
