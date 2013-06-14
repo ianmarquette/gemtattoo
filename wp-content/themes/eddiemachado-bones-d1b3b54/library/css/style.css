@@ -487,12 +487,12 @@ remember less is more.
 /*********************
 CLEARFIXIN'
 *********************/
-.clearfix {
+.clearfix, .og-grid {
   zoom: 1; }
-  .clearfix:before, .clearfix:after {
+  .clearfix:before, .og-grid:before, .clearfix:after, .og-grid:after {
     content: "";
     display: table; }
-  .clearfix:after {
+  .clearfix:after, .og-grid:after {
     clear: both; }
 
 /*********************
@@ -503,7 +503,7 @@ TOOLS
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-.image-replacement {
+.image-replacement, .logo, a.back-to-top {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden; }
@@ -822,24 +822,23 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .masthead {
-  margin: 0 auto;
   display: block;
   max-width: 1000px;
-  text-align: center; }
+  text-align: center;
+  margin: 0 auto; }
   .masthead h1 {
     display: none; }
 
 .logo {
-  background-image: url("../images/gem-tattoo-sprite.png");
-  background-position-x: 0px;
-  background-position-y: 0px;
-  background-repeat: no-repeat;
   display: inline-block;
   margin: 1.6em 1em 0;
   height: 8em;
-  text-indent: -99999px;
   width: 8em;
-  vertical-align: top; }
+  vertical-align: top;
+  background-image: url("../images/gem-tattoo-sprite.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+  background-repeat: no-repeat; }
   .svg .logo {
     background-image: url("../images/gem-tattoo-sprite.svg"); }
 
@@ -953,8 +952,230 @@ POSTS & CONTENT STYLES
 /* end .gallery */
 /* gallery caption styles */
 /******************************************************************
+GALLERY GRID
+******************************************************************/
+.main {
+  background: white;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto; }
+
+.og-grid {
+  list-style: none;
+  margin: 0.8em auto 0;
+  padding: 1.5em 0em 0 0em;
+  text-align: center;
+  width: 100%; }
+
+.og-grid li {
+  display: inline-block;
+  margin: 0 0.8em 1.6em 0.8em;
+  vertical-align: top;
+  height: 18.75em; }
+
+.og-grid li > a,
+.og-grid li > a img {
+  border: none;
+  outline: none;
+  display: block;
+  position: relative; }
+
+/*li.grid-element a::before {
+	position: absolute;
+  content: "";
+  width: 100%;
+  height: 300px;
+  left: 0;
+  top: 0;
+  background: rgba(134, 234, 123, 1);
+  opacity:0;
+  -webkit-transition: opacity 1s ease-out;
+}
+
+li.grid-element a.hover::before {
+	opacity: 1;
+}*/
+.og-expander {
+  position: absolute;
+  background: #d8d8d8;
+  top: auto;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  height: 0;
+  overflow: hidden; }
+
+.og-expander-inner {
+  padding: 3.125em 1.875em;
+  height: 100%; }
+
+.og-close {
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  top: 1.25em;
+  right: 1.25em;
+  cursor: pointer; }
+
+.og-close::before,
+.og-close::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  height: 1px;
+  background: black;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.og-close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.og-close:hover::before,
+.og-close:hover::after {
+  background: #333; }
+
+.og-fullimg {
+  width: 100%;
+  float: left;
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+
+/*.og-details {
+	padding: 0 40px 0 20px;
+}*/
+.og-fullimg {
+  text-align: center; }
+
+.og-fullimg img {
+  display: inline-block;
+  max-height: 100%;
+  max-width: 100%; }
+
+/*.og-details h3 {
+	font-weight: 300;
+	font-size: 52px;
+	padding: 40px 0 10px;
+	margin-bottom: 10px;
+}
+
+.og-details p {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	color: #999;
+}
+
+.og-details a {
+	font-weight: 700;
+	font-size: 16px;
+	color: #333;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 10px 20px;
+	border: 3px solid #333;
+	display: inline-block;
+	margin: 30px 0 0;
+	outline: none;
+}
+
+.og-details a::before {
+	content: '\2192';
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.og-details a:hover {
+	border-color: #999;
+	color: #999;
+}*/
+.og-loading {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ddd;
+  box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  -webkit-animation: loader 0.5s infinite ease-in-out both;
+  -moz-animation: loader 0.5s infinite ease-in-out both;
+  animation: loader 0.5s infinite ease-in-out both; }
+
+@-webkit-keyframes loader {
+  0% {
+    background: #ddd; }
+
+  33% {
+    background: #ccc;
+    box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+
+  66% {
+    background: #ccc;
+    box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; } }
+
+@-moz-keyframes loader {
+  0% {
+    background: #ddd; }
+
+  33% {
+    background: #ccc;
+    box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+
+  66% {
+    background: #ccc;
+    box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; } }
+
+@keyframes loader {
+  0% {
+    background: #ddd; }
+
+  33% {
+    background: #ccc;
+    box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+
+  66% {
+    background: #ccc;
+    box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; } }
+
+@media screen and (max-width: 830px) {
+  .og-expander h3 {
+    font-size: 32px; }
+
+  .og-expander p {
+    font-size: 13px; }
+
+  .og-expander a {
+    font-size: 12px; } }
+@media screen and (max-width: 470px) {
+  .og-fullimg, .og-expander-inner, .og-expander {
+    display: none;
+    height: 0; }
+
+  .og-details {
+    float: none;
+    width: 100%; } }
+/******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
+a.back-to-top {
+  background-size: 400%;
+  display: block;
+  margin: 3.2em auto;
+  height: 4.6875em;
+  width: 4.6875em;
+  background-image: url("../images/gem-tattoo-sprite.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+  background-repeat: no-repeat; }
+  .svg a.back-to-top {
+    background-image: url("../images/gem-tattoo-sprite.svg"); }
+
 .page-navigation,
 .wp-prev-next {
   margin: 1.1em 0 2.2em; }
@@ -1295,16 +1516,16 @@ you can add resource intensive styles.
       text-align: left; }
 
   .logo {
-    background-image: url("../images/gem-tattoo-sprite.png");
-    background-position-x: 0px;
-    background-position-y: 0px;
-    background-repeat: no-repeat;
     display: inline-block;
     margin: 1.6em 1em 0;
     height: 8em;
     text-indent: -99999px;
     width: 8em;
-    vertical-align: top; }
+    vertical-align: top;
+    background-image: url("../images/gem-tattoo-sprite.png");
+    background-position-x: 0px;
+    background-position-y: 0px;
+    background-repeat: no-repeat; }
     .svg .logo {
       background-image: url("../images/gem-tattoo-sprite.svg"); }
 
@@ -1362,6 +1583,18 @@ you can add resource intensive styles.
         display: block; }
 
   /* end .nav */
+  /******************************************************************
+  GALLERY GRID
+  ******************************************************************/
+  li.grid-element a {
+    background: #6bceea; }
+
+  li.grid-element a img {
+    transition: all 0.3s ease-out; }
+
+  li.grid-element a:hover img {
+    opacity: 0.5; }
+
   /*********************
   SIDEBARS & ASIDES
   *********************/

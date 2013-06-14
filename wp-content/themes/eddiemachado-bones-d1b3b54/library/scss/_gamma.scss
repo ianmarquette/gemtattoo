@@ -50,13 +50,13 @@ HEADER STYLES
 
 
 .logo {
-	@include sprite-bg('logo', 0, 0, false);
 	display: inline-block;
 	margin: 1.6em 1em 0;
 	height: 8em;
 	text-indent: -99999px;
 	width: 8em;
 	vertical-align: top;
+	@include sprite-bg('logo', 0, 0, false);
 	}
 
 /*********************
@@ -154,6 +154,22 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+/******************************************************************
+GALLERY GRID
+******************************************************************/
+
+li.grid-element a {
+	background: $blue;
+}
+
+li.grid-element a img {
+	transition: all 0.3s ease-out; 
+}
+
+li.grid-element a:hover img {
+	opacity: 0.5;
+}
 
 /*********************
 SIDEBARS & ASIDES

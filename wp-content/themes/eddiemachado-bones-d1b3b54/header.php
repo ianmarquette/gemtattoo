@@ -43,7 +43,8 @@
 		<!-- end Typekit -->
 
 		<link href="<?php echo get_template_directory_uri(); ?>/library/js/hugrid.css" type="text/css" rel="stylesheet" />
-<script src="<?php echo get_template_directory_uri(); ?>/library/js/jquery-1.6.2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <script src="<?php echo get_template_directory_uri(); ?>/library/js/hugrid.js"></script>
 <script type="text/javascript">
     definegrid = function() {
@@ -100,6 +101,11 @@
 </script>
 
  <!-- <link rel="stylesheet" href="http://basehold.it/25/ff0000"> -->
+
+
+  
+
+ 
 
 	</head>
 
