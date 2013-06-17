@@ -42,8 +42,8 @@ tweeners.
 */
 @media only screen and (min-width: 30em) {
 
-	// styles in beta.scss
-	@import "beta";
+	// styles in _30em.scss
+	@import "30em";
 
 } // end of media query
 
@@ -58,8 +58,8 @@ you can add resource intensive styles.
 */
 @media only screen and (min-width: 48em) {
 
-	// styles in gamma.scss
-	@import "gamma";
+	// styles in _48em.scss
+	@import "48em";
 
 } // end of media query
 
@@ -74,8 +74,8 @@ you can add resource intensive styles.
 */
 @media only screen and (min-width: 64em) {
 
-	// styles in delta.scss
-	@import "delta";
+	// styles in _64.scss
+	@import "64em";
 
 } // end of media query
 
@@ -88,8 +88,8 @@ This is for the larger monitors and possibly full screen viewers.
 */
 @media only screen and (min-width: 77em) {
 
-	// styles in epsilon.scss
-	@import "epsilon";
+	// styles in _77.scss
+	@import "77em";
 
 } // end of media query
 

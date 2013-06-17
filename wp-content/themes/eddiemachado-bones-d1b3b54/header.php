@@ -102,10 +102,51 @@
 
  <!-- <link rel="stylesheet" href="http://basehold.it/25/ff0000"> -->
 
-
-  
-
+ <script>
+        $(document).ready(function() {
+            // hides the slickbox as soon as the DOM is ready
+            $('.about').hide();
+            $('.news').hide();
+            $('.contact').hide();
  
+            $('.menu-item-4 a').click(function() {
+                $('.about').delay(500).slideToggle(500);
+                $(".news").filter(":visible").slideToggle(500);
+                $(".contact").filter(":visible").slideToggle(500);
+                return false;
+            });
+
+            $('.menu-item-5 a').click(function() {
+                $('.about').filter(":visible").slideToggle(500);
+                $(".news").delay(500).slideToggle(500);
+                $(".contact").filter(":visible").slideToggle(500);
+                return false;
+            });
+
+            $('.menu-item-6 a').click(function() {
+                $('.about').filter(":visible").slideToggle(500);
+                $(".news").filter(":visible").slideToggle(500);
+                $(".contact").delay(500).slideToggle(500);
+                return false;
+            });
+
+             $('.about-overlay-close').click(function() {
+                $('.about').filter(":visible").slideToggle(500);
+                return false;
+            });
+
+             $('.news-overlay-close').click(function() {
+                $('.news').filter(":visible").slideToggle(500);
+                return false;
+            });
+
+              $('.contact-overlay-close').click(function() {
+                $('.contact').filter(":visible").slideToggle(500);
+                return false;
+            });
+        });
+    </script>
+
 
 	</head>
 
@@ -116,8 +157,28 @@
 			<header class="header" role="banner">
 
 				<div id="inner-header" class="wrap clearfix">
+                    <div class="overlay-elements">
+                        <div class="about">
+                            <h3>Lydia K</h3>
+                            <p><?php the_field('about_content_field'); ?></p>
+                            <div class="about-overlay-close"></div>
+                        </div>
+                        <div class="news">
+                            <h3>News</h3>
+                            <p><?php the_field('news_content_field'); ?></p>
+                            <div class="news-overlay-close"></div>
+                        </div>
+                        <div class="contact">
+                         <h3>Contact</h3>
+                            <p><?php the_field('news_content_field'); ?></p>
+                            <div class="contact-overlay-close"></div>
+                        </div>
+                    </div><!-- /.overlay-elements -->
+					
+                    <nav role="navigation">
+                       
 
-					<nav role="navigation">
+
 						<?php bones_main_nav(); ?>
 					</nav>
 

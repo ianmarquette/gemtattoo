@@ -2,11 +2,8 @@
 
 				<div id="inner-footer" class="wrap clearfix">
 
-					<nav role="navigation">
-							<?php bones_footer_links(); ?>
-									</nav>
-
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
+					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+					<p>Site by <a href="http://ianmarquette.com" target="_blank">Ian Marquette</a></p>
 
 				</div> <!-- end #inner-footer -->
 
@@ -21,6 +18,13 @@
             $(function() {
                 Grid.init();
             });
+        </script>
+
+        <script>
+        $("a[href='#container']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
         </script>
 
 	</body>

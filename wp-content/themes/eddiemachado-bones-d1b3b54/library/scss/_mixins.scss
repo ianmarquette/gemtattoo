@@ -317,5 +317,15 @@ CENTRE ALIGN BOX ELEMENTS
 }
 
 
+/*********************
+LINK HOVER DECORATION
+*********************/
+
+@mixin link-hover {
+	border-bottom: 2px solid $blue;
+	margin-bottom: 0;
+}
+
+
 
 

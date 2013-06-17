@@ -261,6 +261,79 @@ and more scalable.
 
 } /* end .nav */
 
+/*********************
+OVERLAY ELEMENTS
+*********************/
+
+.overlay-elements {
+	background: $white;
+	@include auto-margin;
+
+}
+.about,
+.news,
+.contact {
+	width: 100%;
+}
+
+.about, .news, .contact {
+
+	padding-top: 1.4em;
+	
+	h3, p {
+		margin: 0 0.5em;
+	}
+
+	p {
+		margin-top: 1.6em;
+	}
+
+}
+
+.about-overlay-close, 
+.news-overlay-close,
+.contact-overlay-close {
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	top: 1.25em;
+	right: 0.4em;
+	cursor: pointer;
+}
+
+.about-overlay-close::before,
+.about-overlay-close::after,
+.news-overlay-close::before,
+.news-overlay-close::after,
+.contact-overlay-close::before,
+.contact-overlay-close::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	height: 1px;
+	background: $black;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.about-overlay-close::after,
+.news-overlay-close::after,
+.contact-overlay-close::after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.about-overlay-close:hover::before,
+.about-overlay-close:hover::after,
+.news-overlay-close::before,
+.news-overlay-close::after,
+.contact-overlay-close::before,
+.contact-overlay-close::after {
+	background: #333;
+}
 
 /*********************
 POSTS & CONTENT STYLES
@@ -459,24 +532,6 @@ GALLERY GRID
 	position: relative;
 }
 
-/*li.grid-element a::before {
-	position: absolute;
-  content: "";
-  width: 100%;
-  height: 300px;
-  left: 0;
-  top: 0;
-  background: rgba(134, 234, 123, 1);
-  opacity:0;
-  -webkit-transition: opacity 1s ease-out;
-}
-
-li.grid-element a.hover::before {
-	opacity: 1;
-}*/
-
-
-
 .og-expander {
 	position: absolute;
 	background: $grey;
@@ -534,10 +589,6 @@ li.grid-element a.hover::before {
 	position: relative;
 }
 
-/*.og-details {
-	padding: 0 40px 0 20px;
-}*/
-
 .og-fullimg {
 	text-align: center;
 }
@@ -547,44 +598,6 @@ li.grid-element a.hover::before {
 	max-height: 100%;
 	max-width: 100%;
 }
-
-/*.og-details h3 {
-	font-weight: 300;
-	font-size: 52px;
-	padding: 40px 0 10px;
-	margin-bottom: 10px;
-}
-
-.og-details p {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 22px;
-	color: #999;
-}
-
-.og-details a {
-	font-weight: 700;
-	font-size: 16px;
-	color: #333;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	padding: 10px 20px;
-	border: 3px solid #333;
-	display: inline-block;
-	margin: 30px 0 0;
-	outline: none;
-}
-
-.og-details a::before {
-	content: '\2192';
-	display: inline-block;
-	margin-right: 10px;
-}
-
-.og-details a:hover {
-	border-color: #999;
-	color: #999;
-}*/
 
 .og-loading {
 	width: 20px;
@@ -599,6 +612,18 @@ li.grid-element a.hover::before {
 	-webkit-animation: loader 0.5s infinite ease-in-out both;
 	-moz-animation: loader 0.5s infinite ease-in-out both;
 	animation: loader 0.5s infinite ease-in-out both;
+}
+
+.og-fullimg, 
+.og-expander-inner, 
+.og-expander { 
+	display: none; 
+	height: 0; 
+}
+
+.og-details { 
+	float: none; 
+	width: 100%; 
 }
 
 @-webkit-keyframes loader {
@@ -619,21 +644,6 @@ li.grid-element a.hover::before {
 	66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
 }
 
-@media screen and (max-width: 830px) {
-
-	.og-expander h3 { font-size: 32px; }
-	.og-expander p { font-size: 13px; }
-	.og-expander a { font-size: 12px; }
-
-}
-
-@media screen and (max-width: 470px) {
-
-	.og-fullimg, .og-expander-inner, .og-expander { display: none; height: 0; }
-	.og-details { float: none; width: 100%; }
-	
-}
-
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -642,10 +652,15 @@ a.back-to-top {
 	@extend .image-replacement;
 	background-size: 400%;
 	display: block;
-	margin: 3.2em auto;
 	height: 4.6875em;
+	margin: 3.2em auto;
+	transition: all 0.1s ease-out; 
 	width: 4.6875em;
 	@include sprite-bg('logo', 0, 0, false);
+
+	&:hover {
+		margin-top: 3.4em;
+	}
 }
 
 .page-navigation,
@@ -1058,7 +1073,27 @@ FOOTER STYLES
 *********************/
 
 .footer {
+	background: $white;
 	clear: both;
+	//padding-bottom: 2.15em;
+
+	p {
+		display: block;
+		float: left;
+		margin: 1.5em 0;
+		padding: 0 0.6em;
+		text-align: right;
+		width: 50%;
+
+		&:first-of-type {
+			//margin: 2.15em 0 1.6em 0;
+			text-align: left;
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
 }
 
 	/*

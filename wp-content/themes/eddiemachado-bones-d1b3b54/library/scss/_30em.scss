@@ -29,6 +29,8 @@ NAVIGATION STYLES
 	.menu {
 		ul {
 			li {
+
+				margin: 0 3em;
 				a {
 					
 					/*
@@ -72,6 +74,7 @@ NAVIGATION STYLES
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+	
 
 /* entry content */
 .entry-content {
@@ -96,6 +99,19 @@ POSTS & CONTENT STYLES
 	}
 			
 } /* end .entry-content */
+
+/******************************************************************
+GALLERY GRID
+******************************************************************/
+
+.og-fullimg, 
+.og-expander-inner, 
+.og-expander { 
+	display: block; 
+	height: 100%; 
+}
+
+
 
 /*********************
 FOOTER STYLES

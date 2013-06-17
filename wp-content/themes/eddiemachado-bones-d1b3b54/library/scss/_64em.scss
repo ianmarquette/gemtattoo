@@ -1,0 +1,49 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: 64em (1030px / 16px) and Up Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+
+/*********************
+OVERLAY ELEMENTS
+*********************/
+
+.about,
+.news,
+.contact {
+	max-width: 1000px;
+	@include auto-margin;
+}
+
+.about, .news {
+
+	h3 {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	p {
+		margin-left: 0;
+		margin-right: 0;
+		width: 66%;
+	}
+
+}
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+
+	p {
+		padding: 0;
+	}
+
+}

@@ -25,7 +25,7 @@
 											 
 												foreach($rows as $row)
 												{
-													echo '<li class="grid-element"><a class="foo" href="#" data-largesrc="' . $row['gallery_large_photo'] .'" ><img src="' . $row['gallery_thumbnail'] . '" /></a> </li>';
+													echo '<li class="grid-element"><a href="#" data-largesrc="' . $row['gallery_large_photo'] .'" ><img src="' . $row['gallery_thumbnail'] . '" /></a> </li>';
 												}
 											 
 											}
@@ -59,7 +59,7 @@
 
 				</div> <!-- end #inner-content -->
 
-				<a href="#top" class="back-to-top">Back to top</a>
+				<a href="#container" class="back-to-top">Back to top</a>
 
 			</div> <!-- end #content -->
 
