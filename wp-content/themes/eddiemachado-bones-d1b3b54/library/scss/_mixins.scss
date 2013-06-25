@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: Gem Tattoo
+Author: @ianmarquette
 
 Stylesheet: Mixins & Constants Stylesheet
 
@@ -281,7 +281,7 @@ $threecol	: 95%;      // 1000px/950px
 SPRITES
 *********************/
 
-$sprite: logo, facebook_icon, tubmlr_icon;
+$sprite: logo, facebook_icon, tumblr_icon, facebook_icon_blue, tumblr_icon_blue;
 $spritegrid:200;
 
 @mixin sprite-bg($crop, $x:0, $y:$x, $hover:true) { 

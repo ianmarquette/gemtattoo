@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name: 
-Author: 
+Site Name: Gem Tattoo
+Author: @ianmarquette
 
 Stylesheet: 64em (1030px / 16px) and Up Desktop Stylsheet
 
@@ -20,7 +20,7 @@ OVERLAY ELEMENTS
 	@include auto-margin;
 }
 
-.about, .news {
+.about, .news, .contact {
 
 	h3 {
 		margin-left: 0;
@@ -34,6 +34,47 @@ OVERLAY ELEMENTS
 	}
 
 }
+
+.contact p {
+	width: 100%;
+}
+
+.contact-details {
+	float: left;
+	margin-right: 1.5em;
+	width: 19.8125em;
+}
+
+.contact-description {
+	float: left;
+	width: 41.1879em;
+}
+
+.facebook-link, .tumblr-link {
+	display: inline-block;
+	width: 3.125em;
+	height: 3.125em;
+	border-radius: 50%;
+	@include sprite-bg('facebook_icon', 0, 0, false);
+	background-color: $grey;
+	background-position: 20px -185px;
+	transition: background-color 0.3s ease-out; 
+}
+
+.tumblr-link {
+	@include sprite-bg('tumblr_icon', 0, 0, false);
+	background-color: $grey;
+	background-position: 18px -386px;
+
+}
+
+.facebook-link:hover, .tumblr-link:hover {
+	background-color: $blue;
+} 
+
+
+
+
 
 
 /*********************

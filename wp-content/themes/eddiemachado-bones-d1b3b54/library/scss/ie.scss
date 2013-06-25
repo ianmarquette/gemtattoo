@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name: 
-Author: 
+Site Name: Gem Tattoo
+Author: @ianmarquette
 
 Stylesheet: IE Stylesheet
 
@@ -22,9 +22,9 @@ import the mixins file so SASS can understand the variables.
 @import "mixins";
 
 @import "grid";
-@import "481up";
-@import "768up";
-@import "1030up";
+@import "30em";
+@import "48em";
+@import "64em";
 
 /* 
 you can call the larger styles if you want, but there's really no need 

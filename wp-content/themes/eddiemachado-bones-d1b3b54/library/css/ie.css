@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name: 
-Author: 
+Site Name: Gem Tattoo
+Author: @ianmarquette
 
 Stylesheet: IE Stylesheet
 
@@ -18,8 +18,8 @@ import the mixins file so SASS can understand the variables.
 */
 /* import mixins */
 /******************************************************************
-Site Name:
-Author:
+Site Name: Gem Tattoo
+Author: @ianmarquette
 
 Stylesheet: Mixins & Constants Stylesheet
 
@@ -242,8 +242,8 @@ CENTRE ALIGN BOX ELEMENTS
 LINK HOVER DECORATION
 *********************/
 /******************************************************************
-Site Name:
-Author:
+Site Name: Gem Tattoo
+Author: @ianmarquette
 
 Stylesheet: Grid Stylesheet
 
@@ -323,8 +323,8 @@ values are commented out on each line.
   float: right; }
 
 /******************************************************************
-Site Name: 
-Author: 
+Site Name: Gem Tattoo
+Author: @ianmarquette
 
 Stylesheet: 30em (481px / 16px) and Up Stylesheet
 
@@ -347,18 +347,9 @@ NAVIGATION STYLES
 .menu {
   /* end .menu ul */ }
   .menu ul {
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
+    /* end .menu ul li */ }
     .menu ul li {
-      /*
-      plan your menus and drop-downs wisely.
-      */ }
-      .menu ul li a {
-        /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
+      margin: 0 3em; }
 
 /* end .menu */
 /*********************
@@ -382,6 +373,15 @@ POSTS & CONTENT STYLES
     clear: both; }
 
 /* end .entry-content */
+/******************************************************************
+GALLERY GRID
+******************************************************************/
+.og-fullimg,
+.og-expander-inner,
+.og-expander {
+  display: block;
+  height: 100%; }
+
 /*********************
 FOOTER STYLES
 *********************/
@@ -391,8 +391,8 @@ do they need tweaking?
 */
 /* end .footer-links */
 /******************************************************************
-Site Name:
-Author:
+Site Name: Gem Tattoo
+Author: @ianmarquette
 
 Stylesheet: 48em (768px / 16px) and Up - Tablet & Small Desktop Stylesheet
 
@@ -409,23 +409,41 @@ GENERAL STYLES
 /*********************
 LAYOUT & GRID STYLES
 *********************/
-.wrap {
-  max-width: 1140px; }
-
 /*********************
 HEADER STYLES
 *********************/
+.masthead h1 {
+  display: inline-block;
+  margin-top: 1.85em;
+  width: 7em; }
+  .masthead h1:first-child {
+    text-align: right; }
+  .masthead h1:last-child {
+    text-align: left; }
+
+.logo {
+  display: inline-block;
+  margin: 1.6em 1em 0;
+  height: 8em;
+  text-indent: -99999px;
+  width: 8em;
+  vertical-align: top;
+  background-image: url("../images/gem-tattoo-sprite.png");
+  background-position-x: 0px;
+  background-position-y: 0px;
+  background-repeat: no-repeat; }
+  .svg .logo {
+    background-image: url("../images/gem-tattoo-sprite.svg"); }
+
 /*********************
 NAVIGATION STYLES
 *********************/
 .nav {
-  background: #eee;
   border: 0;
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */ }
   .nav li {
-    float: left;
     position: relative;
     /*
     plan your menus and drop-downs wisely.
@@ -438,7 +456,8 @@ NAVIGATION STYLES
       has the possibility of being a mobile device.
       */ }
       .nav li a:hover, .nav li a:focus {
-        background-color: #dedede; }
+        border-bottom: 2px solid #6bceea;
+        margin-bottom: 0; }
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
@@ -470,6 +489,45 @@ NAVIGATION STYLES
       display: block; }
 
 /* end .nav */
+/*********************
+OVERLAY ELEMENTS
+*********************/
+.about,
+.news,
+.contact {
+  background: white;
+  width: 100%; }
+
+.about, .news {
+  padding-top: 1.4em; }
+  .about h3, .about p, .news h3, .news p {
+    margin: 0 1.2em;
+    max-width: 1000px; }
+  .about p, .news p {
+    margin-top: 1.6em; }
+
+.about-overlay-close,
+.news-overlay-close,
+.contact-overlay-close {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  top: 1.25em;
+  right: 1.2em;
+  cursor: pointer; }
+
+/******************************************************************
+GALLERY GRID
+******************************************************************/
+li.grid-element a {
+  background: #6bceea; }
+
+li.grid-element a img {
+  transition: all 0.3s ease-out; }
+
+li.grid-element a:hover img {
+  opacity: 0.5; }
+
 /*********************
 SIDEBARS & ASIDES
 *********************/
@@ -504,22 +562,17 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
-.footer-links ul li {
-  /*
-  be careful with the depth of your menus.
-  it's very rare to have multi-depth menus in
-  the footer.
-  */ }
+.footer #inner-footer {
+  max-width: 1000px; }
+.footer p {
+  padding: 0 1.5em; }
+.footer a:hover {
+  border-bottom: 2px solid #6bceea;
+  margin-bottom: 0; }
 
-/* end .footer-links */
 /******************************************************************
-Site Name: 
-Author: 
+Site Name: Gem Tattoo
+Author: @ianmarquette
 
 Stylesheet: 64em (1030px / 16px) and Up Desktop Stylsheet
 
@@ -527,6 +580,69 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
+/*********************
+OVERLAY ELEMENTS
+*********************/
+.about,
+.news,
+.contact {
+  max-width: 1000px;
+  margin: 0 auto; }
+
+.about h3, .news h3, .contact h3 {
+  margin-left: 0;
+  margin-right: 0; }
+.about p, .news p, .contact p {
+  margin-left: 0;
+  margin-right: 0;
+  width: 66%; }
+
+.contact p {
+  width: 100%; }
+
+.contact-details {
+  float: left;
+  margin-right: 1.5em;
+  width: 19.8125em; }
+
+.contact-description {
+  float: left;
+  width: 41.1879em; }
+
+.facebook-link, .tumblr-link {
+  display: inline-block;
+  width: 3.125em;
+  height: 3.125em;
+  border-radius: 50%;
+  background-image: url("../images/gem-tattoo-sprite.png");
+  background-position-x: 0px;
+  background-position-y: -200px;
+  background-repeat: no-repeat;
+  background-color: #d8d8d8;
+  background-position: 20px -185px;
+  transition: background-color 0.3s ease-out; }
+  .svg .facebook-link, .svg .tumblr-link {
+    background-image: url("../images/gem-tattoo-sprite.svg"); }
+
+.tumblr-link {
+  background-image: url("../images/gem-tattoo-sprite.png");
+  background-position-x: 0px;
+  background-position-y: -400px;
+  background-repeat: no-repeat;
+  background-color: #d8d8d8;
+  background-position: 18px -386px; }
+  .svg .tumblr-link {
+    background-image: url("../images/gem-tattoo-sprite.svg"); }
+
+.facebook-link:hover, .tumblr-link:hover {
+  background-color: #6bceea; }
+
+/*********************
+FOOTER STYLES
+*********************/
+.footer p {
+  padding: 0; }
+
 /* 
 you can call the larger styles if you want, but there's really no need 
 */

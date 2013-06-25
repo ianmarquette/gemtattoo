@@ -42,65 +42,7 @@
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<!-- end Typekit -->
 
-		<link href="<?php echo get_template_directory_uri(); ?>/library/js/hugrid.css" type="text/css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-<script src="<?php echo get_template_directory_uri(); ?>/library/js/hugrid.js"></script>
-<script type="text/javascript">
-    definegrid = function() {
-        var browserWidth = $(window).width(); 
-        if (browserWidth >= 1001) 
-        {
-            pageUnits = 'px';
-            colUnits = 'px';
-            pagewidth = 1000;
-            columns = 3;
-            columnwidth = 316;
-            gutterwidth = 26;
-            pagetopmargin = 0;
-            rowheight = 25;
-            gridonload = 'off';
-            makehugrid();
-        } 
-        if (browserWidth <= 1000) 
-        {
-            pageUnits = '%';
-            colUnits = '%';
-            pagewidth = 94;
-            columns = 2;
-            columnwidth = 48;
-            gutterwidth = 4;
-            pagetopmargin = 0;
-            rowheight = 25;
-            gridonload = 'off';
-            makehugrid();
-        }
-        if (browserWidth <= 320) 
-        {
-            pageUnits = 'px';
-            colUnits = 'px';
-            pagewidth = 280;
-            columns = 2;
-            columnwidth = 130;
-            gutterwidth = 20;
-            pagetopmargin = 0;
-            rowheight = 25;
-            gridonload = 'on';
-            makehugrid();
-        }
-    }
-    $(document).ready(function() {
-        definegrid();
-        setgridonload();
-    });    
-
-    $(window).resize(function() {
-        definegrid();
-        setgridonresize();
-    });
-</script>
-
- <!-- <link rel="stylesheet" href="http://basehold.it/25/ff0000"> -->
 
  <script>
         $(document).ready(function() {
@@ -170,7 +112,20 @@
                         </div>
                         <div class="contact">
                          <h3>Contact</h3>
-                            <p><?php the_field('news_content_field'); ?></p>
+                            <div class="contact-details">
+                                <p><?php the_field('address'); ?></p>
+                                <p>Call: <?php the_field('telephone'); ?></p>
+                                <p>Email: <a href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a></p>
+                                <p>Find me elsewhere online:<br>
+                                    <a class="facebook-link" href="<?php the_field('facebook_url'); ?>" target="_blank">Facebook Link</a>
+                                    <a class="tumblr-link" href="<?php the_field('tumblr_url'); ?>" target="_blank">Tumblr Link</a>
+                                </p> 
+                            </div><!-- end .contact-details -->
+                            <div class="contact-description">
+                                <p><?php the_field('contact_description'); ?></p>
+                                <p><a href="<?php the_field('map_link'); ?>" target="_blank">View a map of the studio</a></p>
+                            </div><!-- end .contact-description -->
+                            <div class="clearfix"></div>
                             <div class="contact-overlay-close"></div>
                         </div>
                     </div><!-- /.overlay-elements -->
